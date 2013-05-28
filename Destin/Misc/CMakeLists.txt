@@ -8,3 +8,6 @@ INCLUDE_DIRECTORIES( ../DavisDestin/include )
 ADD_EXECUTABLE( webcamExp WebcamExperiment ../Common/VideoSource )
 TARGET_LINK_LIBRARiES( webcamExp destinalt ${OpenCV_LIBS} avutil common)
 
+INCLUDE_DIRECTORIES( ../DavisDestin/include )
+ADD_EXECUTABLE( color colorExp ../Common/VideoSource )
+TARGET_LINK_LIBRARiES( color destinalt ${OpenCV_LIBS} avutil common)

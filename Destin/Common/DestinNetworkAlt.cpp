@@ -255,6 +255,31 @@ void DestinNetworkAlt::imageWinningCentroidGrid(int layer, int zoom, const strin
     return;
 }
 
+void DestinNetworkAlt::eth_imageWinningCentroidGrid(int layer, int zoom, const string& window_name){
+    uint width = (uint)sqrt(destin->layerSize[layer]);
+
+    //initialize or create new grid if needed
+    if(winningGrid.rows != width || winningGrid.cols != width){
+        //winningGrid = cv::Mat(width, width, CV_32FC1);
+        winningGrid = cv::Mat(width, width, CV_8UC3);
+    }
+
+    int n=0;
+    for(int i=0;i<winningGrid.rows;i++){
+        for(int j=0;j<winningGrid.cols;j++){
+            winningGrid.at<cv::Vec3b>(i,j)[0]= GetNodeFromDestinI(destin, layer, n)->observation[0]*255;
+            winningGrid.at<cv::Vec3b>(i,j)[1]= GetNodeFromDestinI(destin, layer, n)->observation[1]*255;
+            winningGrid.at<cv::Vec3b>(i,j)[2]= GetNodeFromDestinI(destin, layer, n)->observation[2]*255;
+
+            n++;
+        }
+    }
+
+    cv::resize(winningGrid,winningGridLarge, cv::Size(), zoom, zoom, cv::INTER_NEAREST);
+    cv::imshow(window_name, winningGridLarge);
+    return;
+}
+
 void DestinNetworkAlt::printNodeObservation(int layer, int row, int col){
     Node * n = getNode(layer, row, col);
     printf("Node Observation: layer %i, row %i, col: %i\n", layer, row, col);

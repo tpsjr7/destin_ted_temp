@@ -1,0 +1,16 @@
+tree #0 matches input image: 0 2 
+tree #1 matches input image: 0 1 2 
+tree #2 matches input image: 1 2 
+tree #3 matches input image: 0 1 
+tree #4 matches input image: 0 2 
+tree #5 matches input image: 1 2 
+tree #6 matches input image: 1 2 
+tree #7 matches input image: 0 1 2 
+tree #8 matches input image: 1 2 
+tree #9 matches input image: 0 1 
+tree #10 matches input image: 1 2 
+tree #11 matches input image: 0 2 
+tree #12 matches input image: 0 1 2 
+tree #13 matches input image: 0 2 
+tree #14 matches input image: 0 1 
+tree #15 matches input image: 0 2 

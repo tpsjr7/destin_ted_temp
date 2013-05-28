@@ -176,6 +176,8 @@ public:
       */
     void imageWinningCentroidGrid(int layer, int zoom = 8, const string& window_name="Winning Grid");
 
+    void eth_imageWinningCentroidGrid(int layer, int zoom = 8, const string& window_name="Winning Grid");
+
     void printNodeObservation(int layer, int row, int col);
 
     void printNodeBeliefs(int layer, int row, int col);

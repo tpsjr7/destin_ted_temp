@@ -20,7 +20,8 @@ for l in letters:
     # CZT
     #
     #ims.addImage("/home/teaera/Downloads/2/%s.png" % l)
-    ims.addImage("/home/teaera/Downloads/destin_toshare/train images/%s.png" % l)
+    #ims.addImage("/home/teaera/Downloads/destin_toshare/train images/%s.png" % l)
+    ims.addImage("letters/%s.png" % l)
     
 #centroids =  [2,2,8,32,40,32,15,len(letters)]
 centroids =  [4,8,16,32,64,32,16,len(letters)]
@@ -38,7 +39,7 @@ weight_exponent = 4
 save_root="./saves/"
 
 def train():
-    for i in range(3500):
+    for i in range(3500):#it was 3500
         if i % 10 == 0:
             print "Iteration " + str(i)
             
@@ -60,7 +61,7 @@ def dci(layer, cent, equalize_hist = False, exp_weight = 4):
 
 def dcis(layer):
     dn.displayLayerCentroidImages(layer,1000)
-    cv.WaitKey(100)
+    cv.WaitKey(10000)
     
 
 def mkdir(path):
@@ -139,7 +140,7 @@ else:
     
 dn.save("+LO.dst")
 #dci(7,0,False, weight_exponent)
-dcis(7)
+dcis(6)
 
 tm = pd.DestinTreeManager(dn, 0)
 #tm.displayTree()

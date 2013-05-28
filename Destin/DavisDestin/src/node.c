@@ -165,7 +165,13 @@ void GetObservation_c1( Node *n, float *framePtr, uint nIdx )
         // If so, use input from the input image
         for( i=0; i < ni; i++ )
         {
-            n->observation[i] = framePtr[n->inputOffsets[i]];
+            //n->observation[i] = framePtr[n->inputOffsets[i]];
+
+            //@eth : add two more inputs for the RGB
+            n->observation[3*i] = framePtr[n->inputOffsets[i]];
+            n->observation[3*i+1] = framePtr[n->inputOffsets[i]+(512*512*1)];
+            n->observation[3*i+2] = framePtr[n->inputOffsets[i]+(512*512*2)];
+
 
             // 2013.4.11
             // CZT

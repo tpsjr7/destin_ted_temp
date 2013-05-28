@@ -87,6 +87,35 @@ private:
 			}
 		}
 	}
+
+    void eth_convert(cv::Mat & in, float * out) {//@eth_function
+        /*if(in.channels()!=1){
+            throw runtime_error("Excepted a grayscale image with one channel.");
+        }*/
+        if(in.depth()!=CV_8U){
+            throw runtime_error("Expected image to have bit depth of 8bits unsigned integers ( CV_8U )");
+        }
+        cv::Point p(0, 0);
+        int i = 0 ;
+        for (p.y = 0; p.y < in.rows; p.y++) {
+            for (p.x = 0; p.x < in.cols; p.x++) {
+                //i = frame.at<uchar>(p);
+                //use something like frame.at<Vec3b>(p)[channel] in case of trying to support color images.
+                //There would be 3 channels for a color image (one for each of r, g, b)
+
+                //out[i] = (float)in.at<uchar>(p) / 255.0f;
+                //i++;
+
+                //@eth : add two more variables for the RGB color
+                out[i]=(float)in.at<cv::Vec3b>(p)[0] / 255.0f;
+                out[i+(512*512*1)]=(float)in.at<cv::Vec3b>(p)[1] / 255.0f;
+                out[i+(512*512*2)]=(float)in.at<cv::Vec3b>(p)[2] / 255.0f;
+
+                i++;
+
+            }
+        }
+    }
 public:
 	/**
 	 * use_device - if true then will find the default device i.e. webcam as input
@@ -120,6 +149,10 @@ public:
         cvMoveWindow(DESTIN_VIDEO_WINDOW_TITLE, 50, 50);
         av_log_set_level(AV_LOG_QUIET);//turn off message " No accelerated colorspace conversion found from yuv422p to bgr24"
 	}
+
+    void increaseFrame(int ratio){//@eth_function : increases the size of the frame
+        float_frame = new float[ratio*target_size.area()];
+    }
 
 	bool isOpened() {
 		return cap->isOpened();
@@ -192,6 +225,8 @@ public:
 	 * Ment to be used in a while loop to keep capturing until the end of the video.
 	 */
 	bool grab();
+
+    bool eth_grab();
 
     /** rewinds the video
      *  @return - true if it did rewind false otherwise

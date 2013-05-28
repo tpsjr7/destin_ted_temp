@@ -41,8 +41,8 @@ void printFPS(bool print){
 
 int main(int argc, char ** argv){
 
-    //VideoSource vs(false, "./Various.avi");
-    VideoSource vs(true, "");
+    VideoSource vs(false, "./Various.avi");
+    //VideoSource vs(true, "");
 
     vs.enableDisplayWindow();
 
@@ -98,6 +98,8 @@ int main(int argc, char ** argv){
             printf("belief graph layer: %i\n",l);
             network->printBeliefGraph(l,0,0);
         }
+
+        network->displayLayerCentroidImages(2,300,5,"title");
 
     }
 

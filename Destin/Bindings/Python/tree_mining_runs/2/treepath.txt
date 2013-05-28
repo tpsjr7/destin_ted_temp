@@ -1,0 +1,32 @@
+tree #0: size: 1 : (L4,C1,P0)
+
+tree #1: size: 1 : (L4,C9,P0)
+
+tree #2: size: 1 : (L4,C57,P0)
+
+tree #3: size: 1 : (L4,C63,P1)
+
+tree #4: size: 1 : (L4,C2,P2)
+
+tree #5: size: 1 : (L4,C12,P2)
+
+tree #6: size: 1 : (L4,C28,P2)
+
+tree #7: size: 9 : (L5,C0,P0)(L4,C56,P0) (GoUp) (L4,C56,P1) (GoUp) (L4,C56,P2) (GoUp) (L4,C56,P3) (GoUp) 
+
+tree #8: size: 5 : (L5,C24,P0)(L4,C56,P0) (GoUp) (L4,C56,P1) (GoUp) 
+
+tree #9: size: 9 : (L5,C0,P1)(L4,C56,P0) (GoUp) (L4,C56,P1) (GoUp) (L4,C56,P2) (GoUp) (L4,C56,P3) (GoUp) 
+
+tree #10: size: 1 : (L5,C18,P1)
+
+tree #11: size: 5 : (L5,C27,P1)(L4,C56,P0) (GoUp) (L4,C56,P1) (GoUp) 
+
+tree #12: size: 9 : (L5,C0,P2)(L4,C56,P0) (GoUp) (L4,C56,P1) (GoUp) (L4,C56,P2) (GoUp) (L4,C56,P3) (GoUp) 
+
+tree #13: size: 7 : (L5,C5,P2)(L4,C56,P0) (GoUp) (L4,C56,P2) (GoUp) (L4,C56,P3) (GoUp) 
+
+tree #14: size: 9 : (L5,C0,P3)(L4,C56,P0) (GoUp) (L4,C56,P1) (GoUp) (L4,C56,P2) (GoUp) (L4,C56,P3) (GoUp) 
+
+tree #15: size: 7 : (L5,C2,P3)(L4,C56,P1) (GoUp) (L4,C56,P2) (GoUp) (L4,C56,P3) (GoUp) 
+

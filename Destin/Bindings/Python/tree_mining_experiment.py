@@ -121,8 +121,11 @@ dn.setCentImgWeightExponent(4)
 
 ims = pd.ImageSouceImpl() 
 
-letters = "+LO"
-img_path = "/home/ted/Pictures/treeminingletters/"
+#letters = "+LO"
+letters = "ABC"
+#img_path = "/home/ted/Pictures/treeminingletters/"
+img_path = "letters/"
+
 for l in letters:    
     ims.addImage("%s%s.png" % (img_path, l))
     
@@ -144,7 +147,7 @@ found = tm.mine(support)
 print "found %i trees" % (found)
 
 matchSubtrees()
-displayCentroidImages(7)    
+displayCentroidImages(7)
 
 saveResults("2")
 print "click on tree images to continue"
